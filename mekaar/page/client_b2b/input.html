@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<title>BiRU</title>
+
+	<!--=== CSS ===-->
+
+	<!-- Bootstrap -->
+	<link href="http://localhost/biru2/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- jQuery UI -->
+	<!--<link href="plugins/jquery-ui/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />-->
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" type="text/css" href="plugins/jquery-ui/jquery.ui.1.10.2.ie.css"/>
+	<![endif]-->
+
+	<!-- Theme -->
+	<link href="http://localhost/biru2/assets/css/main.css" rel="stylesheet" type="text/css" />
+	<link href="http://localhost/biru2/assets/css/plugins.css" rel="stylesheet" type="text/css" />
+	<link href="http://localhost/biru2/assets/css/responsive.css" rel="stylesheet" type="text/css" />
+	<link href="http://localhost/biru2/assets/css/icons.css" rel="stylesheet" type="text/css" />
+
+	<link href="http://localhost/biru2/assets/css/fontawesome/font-awesome.min.css" rel="stylesheet">
+	<!--[if IE 7]>
+		<link rel="stylesheet" href="assets/css/fontawesome/font-awesome-ie7.min.css">
+	<![endif]-->
+
+	<!--[if IE 8]>
+		<link href="assets/css/ie8.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+	<!-- link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' -->
+
+	<!--=== JavaScript ===-->
+
+	<script type="text/javascript" src="http://localhost/biru2/assets/js/libs/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+
+	<script type="text/javascript" src="http://localhost/biru2/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/assets/js/libs/lodash.compat.min.js"></script>
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script src="assets/js/libs/html5shiv.js"></script>
+	<![endif]-->
+	<!-- Forms -->
+	<script type="text/javascript" src="http://localhost/biru2/plugins/uniform/jquery.uniform.min.js"></script> <!-- Styled radio and checkboxes -->
+
+	<!-- Smartphone Touch Events -->
+	<script type="text/javascript" src="http://localhost/biru2/plugins/touchpunch/jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/plugins/event.swipe/jquery.event.move.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/plugins/event.swipe/jquery.event.swipe.js"></script>
+
+	<!-- General -->
+	<script type="text/javascript" src="http://localhost/biru2/assets/js/libs/breakpoints.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/plugins/respond/respond.min.js"></script> <!-- Polyfill for min/max-width CSS3 Media Queries (only for IE8) -->
+	<script type="text/javascript" src="http://localhost/biru2/plugins/cookie/jquery.cookie.min.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/plugins/slimscroll/jquery.slimscroll.horizontal.min.js"></script>
+
+	<!-- DataTables -->
+	<script type="text/javascript" src="http://localhost/biru2/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/plugins/datatables/DT_bootstrap.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/plugins/datatables/responsive/datatables.responsive.js"></script> <!-- optional -->
+
+	<!-- Page specific plugins -->
+	<!-- Charts -->
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="plugins/flot/excanvas.min.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="http://localhost/biru2/plugins/sparkline/jquery.sparkline.min.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/plugins/flot/jquery.flot.min.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/plugins/flot/jquery.flot.tooltip.min.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/plugins/flot/jquery.flot.resize.min.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/plugins/flot/jquery.flot.time.min.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/plugins/flot/jquery.flot.growraf.min.js"></script>
+
+	<script type="text/javascript" src="http://localhost/biru2/plugins/scrollto/jquery.scrollTo.min.js"></script>
+
+	<script type="text/javascript" src="http://localhost/biru2/plugins/moment/moment-with-locales.js"></script>
+	<!--script-- type="text/javascript" src="http://localhost/biru2/plugins/daterangepicker/moment.min.js"></!--script-->
+	<script type="text/javascript" src="http://localhost/biru2/plugins/daterangepicker/daterangepicker.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/plugins/blockui/jquery.blockUI.min.js"></script>
+
+	<!-- Noty -->
+	<script type="text/javascript" src="http://localhost/biru2/plugins/noty/noty.min.js"></script>
+	<link href="http://localhost/biru2/plugins/noty/noty.css" rel="stylesheet">
+
+	<!-- App -->
+	<script type="text/javascript" src="http://localhost/biru2/assets/js/app.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/assets/js/plugins.js"></script>
+	<script type="text/javascript" src="http://localhost/biru2/assets/js/plugins.form-components.js"></script>
+
+	<script>
+		function formatNumber(amount) {
+			let num=parseFloat(amount.replace(/[\$,]/g, ''));
+			return !isNaN(num)?num:null;
+		}
+		function formatMoney(amount, decimalCount = 2, decimal = ",", thousands = ".") {
+			try {
+				decimalCount = Math.abs(decimalCount);
+				decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+
+				const negativeSign = amount < 0 ? "-" : "";
+
+				let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
+				let j = (i.length > 3) ? i.length % 3 : 0;
+
+				return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+			} catch (e) {
+				console.log(e)
+			}
+		}
+		function htmlDecode(input){
+			var e = document.createElement('textarea');
+			e.innerHTML = input;
+			// handle case of empty input
+			return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+		}
+		function logging_result(x){//acept json/obj
+			x=JSON.stringify(x);
+			$.ajax({
+				url : "http://localhost/biru2/log_result.php",
+				data: {x:x},
+				type: "post",
+				dataType:"text",
+				success:function(result){
+					console.log(result);
+				},
+				error: function(xhr, Status, err) {
+						console.log("Terjadi error logging result : "+Status+err+" : ");
+				}
+			});
+		}
+		function setCookie(cname, cvalue, exdays) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			var expires = "expires="+d.toUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+		function deleteCookie(cname){
+			document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+		}
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for(var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+		$(document).ready(function(){
+			"use strict";
+			App.init(); // Init layout and core plugins
+			Plugins.init(); // Init all plugins
+			FormComponents.init(); // Init all form-specific plugins
+			$('[data-toggle="popover"]').popover({
+				trigger: 'hover'
+			});
+			$('.money').each(function(index,data){
+				data.innerHTML = formatMoney(parseFloat(data.innerHTML),2,',','.');
+			});
+		});
+	</script>
+
+	<!-- Demo JS -->
+	<script type="text/javascript" src="http://localhost/biru2/assets/js/custom.js"></script>
+	<!--script-- type="text/javascript" src="assets/js/demo/charts/chart_filled_yellow.js"></!--script-->
+
+
+</head>
+
+
+<body>
+	<!-- Header -->
+	<header class="header navbar navbar-fixed-top" role="banner">
+        		<!-- Top Navigation Bar -->
+		<div class="container">
+
+			<!-- Only visible on smartphones, menu toggle -->
+			<ul class="nav navbar-nav">
+				<li class="nav-toggle"><a href="javascript:void(0);" title=""><i class="icon-reorder"></i></a></li>
+			</ul>
+
+			<!-- Logo -->
+			<a class="navbar-brand" href="index.php">
+				<img src="http://localhost/biru2/assets/img/logo.png" alt="logo" />
+				<span style="line-height: 50px;vertical-align: bottom;">BIRU </span>
+				<span style="font-size:10px;line-height: 40px;vertical-align: bottom;">(Client B2B)</span>
+			</a>
+			<!-- /logo -->
+
+			<!-- Sidebar Toggler -->
+			<!--<a href="#" class="toggle-sidebar bs-tooltip" data-placement="bottom" data-original-title="Toggle navigation">
+				<i class="icon-reorder"></i>
+			</a>-->
+			<!-- /Sidebar Toggler -->
+
+			<!-- Top Left Menu -->
+			<!--<ul class="nav navbar-nav navbar-left hidden-xs hidden-sm">
+				<li>
+					<a href="#">
+						Ringkasan
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						Saldo
+					</a>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						Alat
+						<i class="icon-caret-down small"></i>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#"><i class="icon-user"></i> Example #1</a></li>
+						<li><a href="#"><i class="icon-calendar"></i> Example #2</a></li>
+						<li class="divider"></li>
+						<li><a href="#"><i class="icon-tasks"></i> Example #3</a></li>
+					</ul>
+				</li>
+			</ul>-->
+			<!-- /Top Left Menu -->
+
+			<!-- Top Right Menu -->
+			<ul class="nav navbar-nav navbar-right">
+				<!-- Notifications -->
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      1 BRU = Rp <span class="money">600000</span>
+					</a>
+				</li>
+
+				<!-- Pengaturan -->
+				<!--li-- class="dropdown hidden-xs hidden-sm">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-cog"></i>
+					</a>
+					<ul class="dropdown-menu extended notification">
+						<li class="title">
+							<p>Pengaturan</p>
+						</li>
+						<li>
+							<a href="pages_user_profile.php">
+								Profil Anda
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								Pengaturan Rekening
+							</a>
+						</li>
+
+					</ul>
+				</!--li-->
+				<!-- Messages -->
+				<li class="dropdown ">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-envelope"></i>
+												<span class="badge">1</span>
+											</a>
+					<ul class="dropdown-menu extended notification">
+						<li class="title">
+							<p>Kamu punya 1 notifikasi</p>
+						</li>
+						<li>
+																							<a href="?p=peserta&id=PR002&a=settlement">
+										<span class="subject">
+											<span class="from">Total Utang Settlement <br> Produk Mekaar</span>
+											<span class="time">Just Now</span>
+										</span>
+										<span class="text">
+											IDR <span class="money">467880</span>
+										</span>
+									</a>
+														<!--a-- href="javascript:void(0);">
+								<span class="photo"><img src="http://localhost/biru2/assets/img/demo/avatar-1.jpg" alt="" /></span>
+								<span class="subject">
+									<span class="from">Bob Carter</span>
+									<span class="time">Just Now</span>
+								</span>
+								<span class="text">
+									Consetetur sadipscing elitr...
+								</span>
+							</!--a-->
+						</li>
+						<li class="footer">
+							<a href="javascript:void(0);">Lihat semua notifikasi</a>
+						</li>
+					</ul>
+				</li>
+
+				<!-- .row .row-bg Toggler -->
+				<li>
+					<a href="#" class="dropdown-toggle row-bg-toggle">
+						<i class="icon-resize-vertical"></i>
+					</a>
+				</li>
+
+
+
+				<!-- User Login Dropdown -->
+				<li class="dropdown user">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<!--<img alt="" src="assets/img/avatar1_small.jpg" />-->
+						<i class="icon-male"></i>
+						<span class="username">
+		CABANG1                        </span>
+						<i class="icon-caret-down small"></i>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="./?p=my_profile#profile" aria-controls="profile" class="tab_a"><i class="icon-user"></i> My Profile</a></li>
+						<li><a href="./?p=my_profile#info" aria-controls="info" class="tab_a"><i class="icon-info-sign"></i> My Info</a></li>
+						<li><a href="./?p=my_profile#transaction_history" aria-controls="transaction_history" class="tab_a"><i class="icon-list"></i> Transaction History</a></li>
+						<li><a href="./?p=my_profile#change_password" aria-controls="change_password" class="tab_a"><i class="icon-key"></i> Change Password</a></li>
+						<li><a href="./?p=my_profile#log_in_history" aria-controls="log_in_history" class="tab_a"><i class="icon-lock"></i> Log In History</a></li>
+						<li class="divider"></li>
+						<li><a href="http://localhost/biru2/logout.php"><i class="icon-off"></i> Log Out</a></li>
+					</ul>
+				</li>
+				<!-- /user login dropdown -->
+			</ul>
+			<!-- /Top Right Menu -->
+		</div>
+		<!-- /top navigation bar -->
+
+		<!--=== Project Switcher ===-->
+		<div id="project-switcher" class="container project-switcher">
+			<div id="scrollbar">
+				<div class="handle"></div>
+			</div>
+
+			<div id="frame">
+				<ul class="project-list">
+					<li>
+						<a href="javascript:void(0);">
+							<span class="image"><i class="icon-desktop"></i></span>
+							<span class="title">Lorem ipsum dolor</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<span class="image"><i class="icon-compass"></i></span>
+							<span class="title">Dolor sit invidunt</span>
+						</a>
+					</li>
+					<li class="current">
+						<a href="javascript:void(0);">
+							<span class="image"><i class="icon-male"></i></span>
+							<span class="title">Consetetur sadipscing elitr</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<span class="image"><i class="icon-thumbs-up"></i></span>
+							<span class="title">Sed diam nonumy</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<span class="image"><i class="icon-female"></i></span>
+							<span class="title">At vero eos et</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<span class="image"><i class="icon-beaker"></i></span>
+							<span class="title">Sed diam voluptua</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<span class="image"><i class="icon-desktop"></i></span>
+							<span class="title">Lorem ipsum dolor</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<span class="image"><i class="icon-compass"></i></span>
+							<span class="title">Dolor sit invidunt</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<span class="image"><i class="icon-male"></i></span>
+							<span class="title">Consetetur sadipscing elitr</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<span class="image"><i class="icon-thumbs-up"></i></span>
+							<span class="title">Sed diam nonumy</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<span class="image"><i class="icon-female"></i></span>
+							<span class="title">At vero eos et</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<span class="image"><i class="icon-beaker"></i></span>
+							<span class="title">Sed diam voluptua</span>
+						</a>
+					</li>
+				</ul>
+			</div> <!-- /#frame -->
+		</div> <!-- /#project-switcher -->
+	</header> <!-- /.header -->
+
+	<div id="container">
+		<div id="sidebar" class="sidebar-fixed">
+			<div id="sidebar-content">
+
+				<!-- Search Input -->
+				<form class="sidebar-search">
+                    <div class="input-box">
+                        <button type="submit" class="submit">
+                            <i class="icon-search"></i>
+                        </button>
+                        <span>
+                            <input type="text" placeholder="Search...">
+                        </span>
+                    </div>
+                </form>
+                <!-- Search Results -->
+                <div class="sidebar-search-results">
+                    <i class="icon-remove close"></i>
+                    <!-- Documents -->
+<div class="title">
+    Tidak ditemukan apapun
+</div>
+<!-- <div class="title">
+    Documents
+</div>
+<ul class="notifications">
+    <li>
+        <a href="javascript:void(0);">
+            <div class="col-left">
+                <span class="label label-info"><i class="icon-file-text"></i></span>
+            </div>
+            <div class="col-right with-margin">
+                <span class="message"><strong>Jane Doe</strong> received $1.527,32</span>
+                <span class="time">finances.xls</span>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href="javascript:void(0);">
+            <div class="col-left">
+                <span class="label label-success"><i class="icon-file-text"></i></span>
+            </div>
+            <div class="col-right with-margin">
+                <span class="message">My name is <strong>Jane Doe</strong> ...</span>
+                <span class="time">briefing.docx</span>
+            </div>
+        </a>
+    </li>
+</ul> -->
+<!-- /Documents -->
+<!-- Persons -->
+<!-- <div class="title">
+    Persons
+</div>
+<ul class="notifications">
+    <li>
+        <a href="javascript:void(0);">
+            <div class="col-left">
+                <span class="label label-danger"><i class="icon-female"></i></span>
+            </div>
+            <div class="col-right with-margin">
+                <span class="message">Jane <strong>Doe</strong></span>
+                <span class="time">21 years old</span>
+            </div>
+        </a>
+    </li>
+</ul> -->
+                </div>
+                <!-- /.sidebar-search-results -->
+				<!--=== Navigation ===-->
+
+                <ul id="nav">
+	<li class="current open">
+		<a href="index.php">
+			<i class="icon-dashboard"></i>
+			Dasbor
+		</a>
+    </li>
+        	<!-- <li>
+        <a href="javascript:void(0);">
+            <i class="icon-ok-circle"></i>
+            Support
+        </a>
+        <ul class="sub-menu">
+            <li><a target="_blank" href="http://localhost/biru2/privasi.html" ><i class="icon-angle-right"></i><i class="icon-ok-circle"></i>Term of Service</a></li>
+            <li><a href="./?p="><i class="icon-angle-right"></i><i class="icon-ok-circle"></i>Privacy Policy</a></li>
+            <li><a href="./?p=" ><i class="icon-angle-right"></i><i class="icon-question-sign"></i>Help</a></li>
+            <li><a href="./?p=" ><i class="icon-angle-right"></i><i class="icon-question-sign"></i>Q & A</a></li>
+            <li><a href="./?p=client_profile#profile" class="tab_c" ><i class="icon-angle-right"></i><i class="icon-user"></i>Client Profile</a></li>
+            <li><a href="./?p=client_profile#transaction_history" class="tab_c"><i class="icon-angle-right"></i><i class="icon-list"></i>Client Transaction</a></li>
+            <li><a href="./?p=" ><i class="icon-angle-right"></i><i class="icon-info-sign"></i>Info Data</a></li>
+            <li><a href="./?p=" ><i class="icon-angle-right"></i><i class="icon-ok-circle"></i>Claim Info & Approval</a></li>
+            <li><a href="./?p=" ><i class="icon-angle-right"></i><i class="icon-question-sign"></i>Data hak dan kewajiban</a></li>
+        </ul>
+    </li> -->
+    <li>
+		<a href="javascript:void(0);">
+			<i class="icon-shopping-cart"></i>
+			Produk
+		</a>
+		<ul class="sub-menu">
+    <!-- if main prod mekaar start -->
+                <!-- if other main prod end -->
+<!-- if main prod mekaar start -->
+                    <li>
+                <a href="javascript:void(0);">
+                    <i class="icon-angle-right"></i>
+                    Mekaar                </a>
+                <ul class="sub-menu">
+    <!-- belum selesai can create cabang&sektor usaha start -->
+                            <!-- belum selesai can create cabang&sektor usaha end -->
+                        
+                                                    <li><a href="./?p=peserta&a=tambah&id=PR002" ><i class="icon-plus"></i> Entry Data Peserta</a></li>
+                            <li><a href="./?p=peserta&a=upload&id=PR002" ><i class="icon-upload"></i> Upload Data Peserta</a></li>
+                                                                            
+                        <!-- Laporan peserta (belum bayar,sudah bayar) start -->
+                        <li>
+                            <a href="javascript:void(0);">
+                                <i class="icon-list"></i>
+                                Laporan Peserta
+                            </a>
+                            <ul class="sub-menu">
+                                                                    <li><a href="./?p=peserta&a=baru&id=PR002" ><i class="icon-group"></i> Baru/Belum Bayar</a></li>
+                                                                                                    <li><a href="./?p=peserta&a=aktif&id=PR002" > <i class="icon-group"></i> Aktif</a></li>
+                                                                                                    <li><a href="./?p=peserta&a=terdampak&id=PR002" ><i class="icon-group"></i> Terdampak Gempa</a></li>
+                                
+                            </ul>
+                        <li>
+                        <!-- Laporan peserta (belum bayar,sudah bayar) end -->
+                                                    <li><a href="./?p=peserta&a=settlement&id=PR002" ><i class="icon-exchange"></i> Settlement</a></li>
+                        
+                        <li><a href="./?p=laporan&a=transaksi&id=PR002" ><i class="icon-list"></i> Laporan Produksi</a></li>
+
+                                                    <li><a href="./?p=laporan&a=gempa&id=PR002" ><i class="icon-list"></i> Laporan Gempa</a></li>
+                        
+                        <li><a href="./?p=list_kewajiban&id=PR002" ><i class="icon-check"></i> Daftar Kewajiban/Utang</a></li>
+    <!-- can claim start -->
+                        <!-- <li><a href="./?p=" ><i class="icon-check"></i> Klaim</a></li> -->
+    <!-- can claim end -->
+                        <li><a href="./?p=list_klaim&id=PR002" ><i class="icon-list"></i> Daftar Klaim</a></li>
+<!-- if main prod mekaar end -->
+                </ul>
+            </li>
+<!-- if other main prod start -->
+                <!-- if other main prod end -->
+        </ul>
+	</li>
+    <!-- li>
+		<a href="javascript:void(0);">
+			<i class="icon-shopping-cart"></i>
+			Data Feed
+		</a>
+        <ul class="sub-menu">
+            <li><a href="./?p=" ><i class="icon-angle-right"></i><i class="icon-group"></i> Bank</a></li>
+            <li><a href="./?p=" ><i class="icon-angle-right"></i><i class="icon-group"></i> Gold Price</a></li>
+            <li><a href="./?p=" ><i class="icon-angle-right"></i><i class="icon-group"></i> EQ Data</a></li>
+            <li><a href="./?p=" ><i class="icon-angle-right"></i><i class="icon-group"></i> Price Engine</a></li>
+        </ul>
+    </!-->
+</ul>
+
+				<!-- /Navigation -->
+				<div class="sidebar-title">
+					<span>Notifications</span>
+				</div>
+				<ul class="notifications demo-slide-in"> <!-- .demo-slide-in is just for demonstration purposes. You can remove this. -->
+					<li>
+    <div class="col-left">
+        <span class="label label-info"><i class="icon-info-sign"></i></span>
+    </div>
+    <div class="col-right with-margin">
+        <span class="message">Produk Mekaar<br>21 Data Baru.</span>
+        <!-- <span class="time">few seconds ago</span> -->
+    </div>
+</li>
+<!-- style-attr is here only for fading in this notification after a specific time. Remove this. -->
+<!-- <li style="display: none;"> 
+    <div class="col-left">
+        <span class="label label-danger"><i class="icon-warning-sign"></i></span>
+    </div>
+    <div class="col-right with-margin">
+        <span class="message">Terjadi Gempa di Kepulauan Halmahera.</span>
+        <span class="time">few seconds ago</span>
+    </div>
+</li> -->
+<!-- style-attr is here only for fading in this notification after a specific time. Remove this. -->
+<!-- <li style="display: none;"> 
+    <div class="col-left">
+        <span class="label label-info"><i class="icon-envelope"></i></span>
+    </div>
+    <div class="col-right with-margin">
+        <span class="message"><strong>Jane</strong> sent you a message</span>
+        <span class="time">few second ago</span>
+    </div>
+</li>
+<li style="display: none;">
+    <div class="col-left">
+        <span class="label label-success"><i class="icon-plus"></i></span>
+    </div>
+    <div class="col-right with-margin">
+        <span class="message"><strong>Emma</strong>'s account was created</span>
+        <span class="time">4 hours ago</span>
+    </div>
+</li> -->				</ul>
+
+				<div class="sidebar-widget align-center">
+					<div class="btn-group" data-toggle="buttons" id="theme-switcher">
+						<label class="btn active">
+							<input type="radio" name="theme-switcher" data-theme="bright"><i class="icon-sun"></i> Bright
+						</label>
+						<label class="btn">
+							<input type="radio" name="theme-switcher" data-theme="dark"><i class="icon-moon"></i> Dark
+						</label>
+					</div>
+				</div>
+
+			</div>
+			<div id="divider" class="resizeable"></div>
+		</div>
+		<!-- /Sidebar -->
+
+		<div id="content">
+			<div class="container">
+				<!-- Breadcrumbs line -->
+				<div class="crumbs">
+					<ul id="breadcrumbs" class="breadcrumb">
+						<li>
+							<i class="icon-home"></i>
+							<a href="index.php">Dasbor</a>
+						</li>
+						<li>
+                            <a href="#" title="">Produk Mekaar</a>
+                        </li>
+                        <li class="current">
+							<a href="#" title="">Entry Data Peserta</a>
+						</li>
+					</ul>
+
+					<ul class="crumb-buttons">
+						<!-- <li><a href="charts.html" title=""><i class="icon-signal"></i><span>Statistics</span></a></li> -->
+						        <li><a href="#" title=""><i class="icon-group"></i><span>Pulau Tidung (I)</span></a></li>
+     
+    <li class="dropdown"><a href="#" title="" data-toggle="dropdown">
+        <i class="icon-building"></i><span>PT. ASKRINDO SYARIAH</span><i class="icon-angle-down left-padding"></i></a>
+        <ul class="dropdown-menu pull-right">
+            <li><a href="./?p=my_profile#profile" aria-controls="profile" class="tab_a"><i class="icon-user"></i> Company Profile</a></li>
+        </ul>
+    </li>
+						<!-- <li class="range"><a href="#">
+							<i class="icon-calendar"></i>
+							<span></span>
+							<i class="icon-angle-down"></i>
+						</a></li> -->
+					</ul>
+				</div>
+				<!-- /Breadcrumbs line -->
+
+				<!--=== Page Header ===-->
+				<div class="page-header">
+
+				</div>
+				<!-- /Page Header -->
+
+				<!--=== Page Content ===-->
+                <link rel="stylesheet" type="text/css" href="http://localhost/biru2/assets/template/ContactFrom_v5/vendor/select2/css/select2.min.css">
+				<link rel="stylesheet" type="text/css" href="http://localhost/biru2/assets/template/ContactFrom_v5/fonts/iconic/css/material-design-iconic-font.min.css">
+				<link rel="stylesheet" type="text/css" href="http://localhost/biru2/assets/template/ContactFrom_v5/css/util.css">
+				<link rel="stylesheet" type="text/css" href="http://localhost/biru2/assets/template/ContactFrom_v5/css/main.css">
+                <style>
+                    h3{margin-top: 0;width: 100%;font-weight: 500;}
+                    .pbb0{display:block;font-size:24px}
+                    .pbb3{width:calc(20% - 20px)}.pbb4{width:calc(80% - 30px)}
+                    .pbb{height:30px;font-size:13px !important;color:#555555;font-weight:bold}
+                    .hvr{border: 1px solid #ccc;}</style>
+				<script src="http://localhost/biru2/assets/template/ContactFrom_v5/js/main.js"></script>
+				<script type="text/javascript" src="http://localhost/biru2/assets/template/ContactFrom_v5/vendor/select2/js/select2.min.js"></script>
+				<script>
+                    function getUrllets() {
+                        let lets = {};
+                        let parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                            lets[key] = value;
+                        });
+                        return lets;
+                    }
+                    function getUrlParam(parameter, defaultvalue){
+                        let urlparameter = defaultvalue;
+                        if(window.location.href.indexOf(parameter) > -1){
+                            urlparameter = getUrllets()[parameter];
+                        }
+                        return urlparameter;
+                    }
+					$(document).ready(function(){
+                        $(".js-select2").each(function(){
+							$(this).select2({
+								minimumResultsForSearch: 2,
+								dropdownParent: $(this).next('.dropDownSelect2')
+							});
+						});
+                    });
+				</script>
+
+                <div class="row" style="margin-bottom:20px;">
+                    <form id="form" class="contact100-form form-horizontal validate-form" method="post">
+                        <div class="wrap-input100 bg1 rs2-wrap-input100" >
+                            <span class="label-input100">No PKS</span>
+                            <input readonly type="text" class="input100" id="pks_mou" value="112223/23/2018">
+                        </div>
+                                                <div class="wrap-input100 bg1 rs2-wrap-input100" >
+                            <span class="label-input100">Premi Dasar (%) PROD 001</span>
+                            <input readonly type="text" class="input100" id="premi" value="0.18">
+                        </div>
+                                                <div class="wrap-input100 bg1 rs2-wrap-input100" >
+                            <span class="label-input100">Premi Dasar (%) Insurance</span>
+                            <input readonly type="text" class="input100" id="premi" value="0.28">
+                        </div>
+                                                <h3>--- Data Peserta ---</h3>
+                        <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Silakan Masukkan KTP/Loan ID">
+                            <span class="label-input100">No KTP/Loan ID Peserta</span>
+                            <input type="text" id="ktp" name="ktp" placeholder="isi ktp/loan id" class="input100" required>
+                        </div>
+                        <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Silakan Masukkan Nama">
+                            <span class="label-input100">Nama Peserta</span>
+                            <input type="text" id="nama" name="nama" placeholder="isi nama" class="input100" required>
+                        </div>
+                        <div class="wrap-input100 input100-select bg1 rs1-wrap-input100 ">
+                            <span class="label-input100">Sektor Usaha Peserta</span>
+                            <div>
+                                <select required name="usaha" class="js-select2" id="usaha">
+                                    <option value="" selected disabled>Pilih Sektor Usaha</option>
+                                                                        <option value="SU003">Bengkel Alat</option>
+                                    <option value="SU002">Bengkel Mobil</option>
+                                    <option value="SU001">Bengkel Motor</option>
+                                    <option value="SU123">Pedagang Asongan</option>
+                                </select>
+                                <div class="dropDownSelect2"></div>
+                            </div>
+                        </div>
+                        <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Silakan Masukkan Tanggal Lahir">
+                            <span class="label-input100">Tanggal Lahir Peserta</span>
+                            <input type="date" id="lahir" name="lahir" class="input100" required value="">
+                        </div>
+                        <div class="wrap-input100 validate-input bg1 rs1-alert-validate" data-validate = "Silakan Masukkan Alamat Anda">
+                            <span class="label-input100">Alamat Peserta</span>
+                            <textarea class="input100" name="alamat" placeholder="isi alamat"></textarea>
+                        </div>
+                        <h3>--- Data Peserta ---</h3>
+                        <div class="wrap-input100 input100-select bg1 rs2-wrap-input100 ">
+                            <span class="label-input100">Cabang</span>
+                            <div>
+                                <select required  id="cabang" name="cabang" class="js-select2">
+                                    <option selected disabled>Pilih Cabang</option>
+                        <option zona="4" value="C2" selected >Pulau Tidung (I)</option>
+                                    </select>
+                                <div class="dropDownSelect2"></div>
+                            </div>
+                        </div>
+                        <div class="wrap-input100 validate-input bg1 rs23-wrap-input100" data-validate = "Plafond Pembayaran">
+							<span class="label-input100">Plafond Pembiayaan</span>
+							<div class="pbb0">
+                                <input readonly class="pbb pbb3" name="mata_uang" id="mata_uang" value="IDR">
+								&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input name="plafond" id="plafond" type="text" required class="pbb hvr pbb4" style="text-align:right" paceholder="isi pembayaran">
+                            </div>
+                        </div>
+                        <div class="wrap-input100 validate-input bg1 rs2-wrap-input100" data-validate="Silahkan Masukkan Pencairan ID">
+                            <span class="label-input100">Pencairan ID</span>
+                            <input class="input100" id="pencairan" required type="text" name="pencairan" placeholder="isi pencairan id">
+                        </div>
+                        <div class="wrap-input100 validate-input bg1 rs2-wrap-input100" data-validate="Silahkan Masukkan Tanggal Pencariran">
+                            <span class="label-input100">Tanggal Pencairan</span>
+                            <input value="2020-06-22" class="input100" id="tanggal_pencairan" required type="date" name="tanggal_pencairan">
+                        </div>
+                        <div class="wrap-input100 validate-input bg1 rs2-wrap-input100" data-validate="Silahkan Masukkan Jumlah Minggu">
+                            <span class="label-input100">Jumlah Minggu</span>
+                            <input type="number" min="1" required class="input100" name="minggu" id="minggu" placeholder="isi jumlah minggu">
+                        </div>
+                        <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Silahkan Masukkan Tanggal Awal">
+                            <span class="label-input100">Awal Periode</span>
+                            <input class="input100" value="2020-06-22" id="awal_periode" required type="date" name="awal_periode">
+                        </div>
+                        <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Silahkan Masukkan Tanggal Akhir">
+                            <span class="label-input100">Akhir Periode</span>
+                            <input class="input100" value="2020-06-22" min="2020-06-22" id="akhir_periode" required type="date" name="akhir_periode">
+                        </div>
+                        <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Silahkan Masukkan Nilai UK">
+                            <span class="label-input100">Nilai UK</span>
+                            <input type="text" min="0" style="text-align:right" required class="input100" name="uk" id="uk">
+                        </div>
+                        <div class="wrap-input100 bg1 rs1-wrap-input100" >
+                            <span class="label-input100">Premi</span>
+                            <input type="text" style="text-align:right" readonly class="input100 " name="premi_pinjam" id="premi_pinjam">
+                        </div>
+                        <div class="container-contact100-form-btn">
+                            <a href="./?p=peserta&a=settlement&id=PR002" class="contact100-form-btn btn btn-warning ">Kembali</a>
+                            <button value="SEND" type="submit" class="contact100-form-btn">
+                                <span>
+                                    Simpan
+                                    <i class="icon-angle-right"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+				<footer>
+    <div class="footer-content">
+        <div class="footer-menu">
+            <ul>
+                <li><a href="#">Bantuan & hubungi</a></li>
+                <li><a href="#">Peta Situs</a></li>
+                <li><a href="#">Keamanan</a></li>
+                <li><a href="#">Tentang BiRU</a></li>
+            </ul>
+
+        </div>
+        <div class="footer-copy">
+            <div class="col-md-6 copyright no-pad">
+                <small><p>BiRU v1.0 - © 2018 PT. Berbagi Resiko Universal</p></small>
+            </div>
+            <div class="col-md-6 footer-menu no-pad">
+                <ul>
+                    <li><a href="#">Kebijakan Privasi</a></li>
+                    <li><a href="#">Ketentuan Hukum</a></li>
+                    <li><a href="#">Pembaruan Kebijakan</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+				<!-- /Page Content -->
+			</div>
+		</div>
+	</div>
+    <script>
+		$(document).ready(function(){
+            let produk=getUrlParam('id',false);
+            $('#produk').val(produk).select2();
+            $('#produk').trigger('change');
+            $('#plafond,#uk').on('focusin',function(){
+                $(this).val(formatNumber($(this).val()));
+            });
+            $('#plafond,#uk').on('focusout',function(){
+                $(this).val(formatMoney(formatNumber($(this).val()), 2, ".", ","));
+            });
+
+			$('#awal_periode').on('change',function(){
+				$('#akhir_periode').val("");
+				$('#akhir_periode').attr("min",this.value);
+			});
+			$('#cabang,#lahir').on('change',function(){
+				hitungPremi();
+			});
+			$('#plafond').on('keyup ',function(){
+				hitungPremi();
+			});
+
+            function hitungPremi(){
+                $('#premi_pinjam').val('Menghitung ...');
+                let zona=$($('#cabang option:selected')[0]).attr('zona'),
+                    cabang=$('#cabang').val(),
+                    lahir=$('#lahir').val(),
+                    plafond=formatNumber($('#plafond').val());
+                $.ajax({
+                    url : "ambil_data.php?type=hitungpremi",
+                    data: {kode:'PR002',nilai:plafond,zona:zona,cabang:cabang,lahir:lahir},
+                    type: "get",
+                    dataType:"json",
+                    success:function(result){
+                        console.log(result);
+                        if(result[0]==false){
+                            $('#premi_pinjam').val(result.pesan);
+                        }else{
+                            let hasil=result.premi;
+                            if( ! isNaN(hasil) )
+                                $('#premi_pinjam').val(formatMoney(hasil, 2, ".", ","));
+                        }
+                    },
+                    error: function(xhr, Status, err) {
+                        $('#premi_pinjam').val('Gagal menghitung');
+                        alert("Terjadi error : "+Status+" : ");
+                    }
+                });
+                /*
+                let rate=$($('#cabang option:selected')[0]).attr('rate'),
+                    premiDCA=$('#premi').val(),
+
+
+                */
+            }
+            $('#form').on('submit',function(e){
+                event.preventDefault();
+                let input = $('.validate-input .input100');
+                let check = true;
+
+                for(let i=0; i<input.length; i++) {
+                    if(validate(input[i]) == false){
+                        showValidate(input[i]);
+                        check=false;
+                    }
+                }
+                if(!check) return check;
+
+                simpan();
+            });
+            /*==================================================================
+						[ Validate after type ]*/
+						$('.validate-input .input100').each(function(){
+							$(this).on('blur', function(){
+								if(validate(this) == false){
+									showValidate(this);
+								}
+								else {
+									$(this).parent().addClass('true-validate');
+								}
+							})
+						});
+						/*==================================================================
+						[ Validate ]*/
+						$('.validate-form .input100').each(function(){
+							$(this).focus(function(){
+							hideValidate(this);
+							$(this).parent().removeClass('true-validate');
+							});
+						});
+						function validate (input) {
+							if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
+								if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
+									return false;
+								}
+							}
+							else if($(input).attr('name') == 'pbb'){
+								let pattern=/^[0-9]{18}$/i;
+								let m=$(input).val().trim().match(pattern);
+								console.log($(input));
+								if(m == null) {
+									return false;
+								}
+							}
+							else {
+								if($(input).val().trim() == ''){
+									return false;
+								}
+							}
+						}
+						function showValidate(input) {
+							let thisAlert = $(input).parent();
+
+							$(thisAlert).addClass('alert-validate');
+							$(thisAlert).append('<span class="btn-hide-validate">&#xf136;</span>')
+							$('.btn-hide-validate').each(function(){
+								$(this).on('click',function(){
+								hideValidate(this);
+								});
+							});
+						}
+						function hideValidate(input) {
+							let thisAlert = $(input).parent();
+							$(thisAlert).removeClass('alert-validate');
+							$(thisAlert).find('.btn-hide-validate').remove();
+						}
+
+            function simpan(){
+                if(confirm("Simpan Data?")){
+                    let ajaxRequest;
+                    try{
+                        ajaxRequest = new XMLHttpRequest();
+                    } catch (e){
+                        try{
+                            ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+                        } catch (e) {
+                            try{
+                                ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                            } catch (e){
+                                alert("Your browser broke!");
+                                return false;
+                            }
+                        }
+                    }
+                    ajaxRequest.onreadystatechange = function(){
+                        if(ajaxRequest.readyState == 4){
+                            console.log(ajaxRequest.responseText);
+                            let JSONObject = JSON.parse(ajaxRequest.responseText);
+                            if(JSONObject[0] != false)
+                            {
+                                alert(JSONObject.pesan);
+                                window.location = "./?p=peserta&a=settlement&id=PR002";
+                            }else{
+                                alert(JSONObject.pesan);
+                            }
+                        }
+                    }
+                    ajaxRequest.open("POST", "./simpan.php", true);
+                    
+
+                    let formElement = document.getElementById("form");
+                    let formData = new FormData(formElement);
+                    formData.set("type","peserta_tambah");
+                    formData.set("produk","PR002");
+                                        formData.set("token","796768a971de948fc2fa037e5187ce5ff42b85814f935a87d0e52ebeec720a8e");
+
+                    ajaxRequest.send(formData);
+                }
+            }
+        });
+	</script>
+</body>
+</html>
+</html>

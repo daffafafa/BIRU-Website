@@ -1,0 +1,284 @@
+/* ========================================================
+*
+* Melon - Flat & Responsive Admin Template
+*
+* ========================================================
+*
+* File: login.css
+* Description: Login template styling
+* Version: 1.0
+*
+* ======================================================== */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.login {
+  background-color: #fff;
+  /*padding-top: 60px;*/
+  /* Helper */
+}
+.login .logo,
+.login .single-sign-on,
+.login .footer {
+  margin: 0 auto;
+  text-align: center;
+}
+.login .logo {
+  padding: 15px;
+  font-size: 23px;
+}
+.login .box {
+  background-color: #fff;
+  width: 450px;
+  margin: 0 auto;
+  border: 0px solid #d9d9d9;
+  border-top: 0px solid #0075fc;
+  /* * * * * * * * * * * *
+		 * Inner Box
+		 * * * * * * * * * * * */
+}
+.login .box .content {
+  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.login .box form {
+  padding: 0;
+  margin: 0;
+}
+.login .box .form-title {
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 25px;
+}
+.login .box .form-group {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+.login .box .form-actions {
+  background-color: #fff;
+  border-top: none;
+  padding: 10px 0;
+  margin: 0;
+}
+.login .box .input-icon input {
+  /*border-left: 1px solid #0075fc;*/
+}
+.login .box .has-error .input-icon input {
+  border-left-color: #b94a48;
+}
+.login .box .has-success .input-icon input {
+  border-left-color: #3968c6;
+}
+.login .box .checkbox {
+  margin-top: 7px;
+}
+.login .box .inner-box {
+  background-color: #fff;
+  border-top: 1px solid #c0c0c0;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+}
+.login .box .inner-box .content {
+  padding: 12px 30px;
+  text-align: center;
+}
+.login .box .inner-box a {
+  color: #555555;
+  font-size: 12px;
+  font-weight: 600;
+}
+.login .box .inner-box a:hover {
+  text-decoration: none;
+  color: #0075fc;
+}
+.login .box .inner-box .close {
+  font-size: 12px;
+  margin-top: -3px;
+  margin-right: -20px;
+}
+.login .box .inner-box .close.hide-default {
+  display: none;
+}
+.login .box .inner-box form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.login .box .inner-box a + form {
+  margin-top: 20px;
+}
+.login .box .inner-box .form-group {
+  margin-bottom: 10px;
+}
+.login .box .inner-box .forgot-password-done {
+  padding: 10px 0;
+}
+.login .box .inner-box .forgot-password-done .success-icon,
+.login .box .inner-box .forgot-password-done .danger-icon {
+  display: block;
+  font-size: 30px;
+  padding: 15px;
+  padding-top: 0;
+}
+.login .box .inner-box .forgot-password-done .success-icon {
+  color: #94b86e;
+}
+.login .box .inner-box .forgot-password-done .danger-icon {
+  color: #e25856;
+}
+.login .box .inner-box .forgot-password-done span {
+  font-weight: 600;
+}
+.login .single-sign-on {
+  width: 350px;
+  padding: 15px 0;
+  opacity: 0.5;
+  -webkit-transition: opacity 200ms ease-out;
+  -moz-transition: opacity 200ms ease-out;
+  -o-transition: opacity 200ms ease-out;
+  transition: opacity 200ms ease-out;
+}
+.login .single-sign-on:hover {
+  opacity: 1;
+}
+.login .single-sign-on span {
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: block;
+  color: #888888;
+}
+.login .single-sign-on .btn i {
+  padding-right: 5px;
+}
+.login .footer {
+  width: 350px;
+  padding-bottom: 30px;
+}
+.login .footer a {
+  font-size: 13px;
+  color: #6f6f6f;
+}
+.login .footer a:hover {
+  text-decoration: none;
+  color: #4d7496;
+}
+.login .footer a strong {
+  color: #0075fc;
+}
+.login .spacing-top {
+  padding-top: 7px !important;
+}
+.login-left-box {
+  align-items: center;
+  display: flex;
+}
+.login-left-box .bg {
+  bottom: 0px;
+  background-image: url(../img/vector.svg);
+  position: absolute;
+  background-size: cover;
+  width: 100%;
+  left: -5px;
+  height: 243px;
+}
+.login-left-box > .blok{
+  margin: 0 auto;
+  display: block;
+}
+.login-left-box .panel{
+  color: #fff;
+  background: none;
+  display: block;
+  position: relative;
+}
+.login-left-box .panel .img{
+  background-color: #fff;
+  width: 150px;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 8px;
+}
+.login-left-box .panel .img img{
+  max-height:50px;
+}
+.login-left-box .panel .title {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  margin-left: 10px;
+  display: inline-block;
+}
+.login-left-box .panel h3{
+  margin-top: 0;
+}
+.login-left-box .panel p{
+  font-size: 13px;
+  margin-right: 20px;
+}
+@media (min-width:768px) and (max-width:1085px){
+  .login-left-box {
+    height: 100%;
+  }
+  .login-left-box .panel{
+  }
+  .login-left-box .panel .title {
+  }
+  .login-left-box .panel h3{
+  }
+  .login-left-box .panel p{
+  }
+}
+@media (min-width:561px) and (max-width:767px){
+  .login-left-box {
+    height: 100%;
+  }
+  .login-left-box .panel{
+  }
+}
+@media (max-width:560px){
+  .login-left-box {
+    height: 100%;
+  }
+  .login-left-box .panel{
+  }
+  .login-left-box .panel .title {
+  }
+  .login-left-box .panel h3{
+  }
+  .login-left-box .panel p{
+  }
+}
+.login-right-box {
+  height: 100%;
+  align-items: center;
+  display: flex;
+}
+.bg-blue {
+  background: #1a2eb0;
+}
+.full-height {
+  height: 100%;
+}
+.login-left-box h2 {
+  font-size: 45px;
+  padding: 25% 5% 0 5%;
+  color: #fff;
+}
+.login-left-box h4 {
+  font-size: 16px;
+  color: #fff;
+  margin-top: 30px;
+  padding: 0 5% 0 5%;
+}
